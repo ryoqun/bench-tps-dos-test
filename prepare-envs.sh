@@ -23,7 +23,7 @@ echo ----- stage: checkout buildkite Steps Env ------
 [[ ! "$GIT_REPO_DIR" ]]&& GIT_REPO_DIR="bench-tps-dos-test"
 [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
 if [[ ! "$SOLANA_GIT_COMMIT" ]];then
-    ret=$(git clone https://github.com/solana-labs/solana.git)
+    ret=$(git clone https://github.com/anza-xyz/agave.git)
     if [[ -d solana ]];then
         cd ./solana
         [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
@@ -31,7 +31,7 @@ if [[ ! "$SOLANA_GIT_COMMIT" ]];then
         SOLANA_GIT_COMMIT=$(git rev-parse HEAD)
         cd ../
     else
-        echo "can not clone https://github.com/solana-labs/solana.git"
+        echo "can not clone https://github.com/anza-xyz/agave.git"
         exit 1
     fi
 fi
@@ -43,7 +43,7 @@ fi
 [[ ! "$BENCH_TPS_ARTIFACT_FILE" ]]&& BENCH_TPS_ARTIFACT_FILE="solana-bench-tps"
 [[ ! "$DOS_BENCH_TPS_PRIVATE_BUCKET" ]]&& DOS_BENCH_TPS_PRIVATE_BUCKET=bench-tps-dos-private
 [[ ! "$DOS_BENCH_TPS_LOG_BUCKET" ]]&& DOS_BENCH_TPS_LOG_BUCKET="bench-tps-dos-log"
-[[ ! "$SOLANA_REPO" ]]&& SOLANA_REPO=https://github.com/solana-labs/solana.git
+[[ ! "$SOLANA_REPO" ]]&& SOLANA_REPO=https://github.com/anza-xyz/agave.git
 [[ ! "$KEEP_INSTANCES" ]]&& KEEP_INSTANCES="false" && echo KEEP_INSTANCES env not found, use $KEEP_INSTANCES
 [[ ! "$RUN_BENCH_AT_TS_UTC" ]]&& RUN_BENCH_AT_TS_UTC=0 && echo RUN_BENCH_AT_TS_UTC env not found, use $RUN_BENCH_AT_TS_UTC
 #[[ ! "$SLACK_WEBHOOK" ]]&&[[ ! "$DISCORD_WEBHOOK" ]]&& echo no WEBHOOK found&&exit 1

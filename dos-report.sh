@@ -19,7 +19,7 @@ if [[ -n $BUILDKITE_BUILD_URL ]] ; then
 	BUILD_BUTTON_TEXT="Build Kite Job"
 else
 	BUILD_BUTTON_TEXT="Build URL not defined"
-    BUILDKITE_BUILD_URL="https://buildkite.com/solana-labs/"
+    BUILDKITE_BUILD_URL="https://buildkite.com/anza/"
 fi
 ## setup window interval for query
 window_interval="10s"

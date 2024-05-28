@@ -36,7 +36,7 @@ This is a implementation for
 + creates NUM_CLIENT google clound instances 
 + builds solana to use the latest bench-tps (option)
     + use BUILD_SOLANA=true to enable
-    + downloads and builds https://github.com/solana-labs/solana
+    + downloads and builds https://github.com/anza-xyz/agave
     + waits for NUM_CLIENT finishing build (blocking)
 + starts UDP/QUIC bench-tps DOS test by runing scripts in the instances
 + analyzes data by querying influxcloud
