@@ -23,7 +23,7 @@ echo ----- stage: checkout buildkite Steps Env ------
 [[ ! "$GIT_REPO_DIR" ]]&& GIT_REPO_DIR="bench-tps-dos-test"
 [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
 if [[ ! "$SOLANA_GIT_COMMIT" ]];then
-    ret=$(git clone https://github.com/anza-xyz/agave.git)
+    ret=$(git clone https://github.com/anza-xyz/agave.git solana)
     if [[ -d solana ]];then
         cd ./solana
         [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
