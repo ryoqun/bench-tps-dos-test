@@ -65,8 +65,8 @@ cd "$HOME"
 
 if  [[ "$build_binary" == "true" ]];then 
     echo ------- build solana-bench-tps ------
-    [[ -d "$HOME/solana" ]]&& rm -rf "$HOME/solana"
-    git clone "$SOLANA_REPO"
+    rm -rf "$HOME/solana"
+    git clone "$SOLANA_REPO" solana
 
     [[ -d "$HOME/solana" ]] || exit 1
     cd "$HOME/solana"
