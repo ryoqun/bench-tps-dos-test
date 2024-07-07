@@ -24,7 +24,6 @@ echo ----- stage: checkout buildkite Steps Env ------
 [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
 if [[ ! "$SOLANA_GIT_COMMIT" ]];then
     ret=$(git clone --config 'remote.origin.fetch=+refs/heads/*:refs/remotes/origin/heads/*' --config 'remote.origin.fetch=+refs/pull/*:refs/remotes/origin/pull/*' https://github.com/anza-xyz/agave.git solana)
-    git branch -a
     if [[ -d solana ]];then
         cd ./solana
         [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
