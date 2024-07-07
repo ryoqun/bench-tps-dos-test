@@ -23,7 +23,8 @@ echo ----- stage: checkout buildkite Steps Env ------
 [[ ! "$GIT_REPO_DIR" ]]&& GIT_REPO_DIR="bench-tps-dos-test"
 [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
 if [[ ! "$SOLANA_GIT_COMMIT" ]];then
-    ret=$(git clone --config 'remote.origin.fetch=+refs/heads/*:refs/remotes/origin/heads/*' --config 'remote.origin.fetch=+refs/pull/*:refs/remotes/origin/pull/*' https://github.com/anza-xyz/agave.git solana)
+    # Also fetch pull/* into origin/pull/* to build pr branches.
+    ret=$(git clone --config 'remote.origin.fetch=+refs/pull/*:refs/remotes/origin/pull/*' https://github.com/anza-xyz/agave.git solana)
     if [[ -d solana ]];then
         cd ./solana
         [[ ! "$SOLANA_BUILD_BRANCH" ]]&& SOLANA_BUILD_BRANCH=master
